@@ -26,37 +26,35 @@
   [self removeAllNotificationWaitting];
 }
 
-- (void) waitDoneNotification:(NSString*)doneNotification {
+- (void)waitDoneNotification:(NSString*)doneNotification {
   // Wait the Notificatio of downloading done!
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getDoneNotification:) name:doneNotification object:nil];
   
-  if(targetDoneNotification != nil)
+  if(_targetDoneNotification != nil)
     [self removeAllNotificationWaitting];
   
-  targetDoneNotification = doneNotification;
+  self.targetDoneNotification = doneNotification;
 //  targetDoneNotification=[doneNotification retain];
 }
 
 #pragma mark - Notification
 
 - (void) getDoneNotification:(NSNotification*)notification {
-//  AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
-  NSLog(@"getNotification");
-//  [self.imageView setImage:[UIImage imageWithData:[appDelegate.dataSource loadCachedFileOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",[notification name]]]]]];
+//  NSLog(@"getNotification");
+  [_imageView setImage:[UIImage imageWithData:[[DataSingleton sharedInstance] returnCachedFileWithUrlStr:[notification name]]]];
   [_activityIndicatorView stopAnimating];
   
   [self removeAllNotificationWaitting];
 }
 
 - (void) removeAllNotificationWaitting {
-  if(targetDoneNotification != nil)
+  if(_targetDoneNotification != nil)
     {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:targetDoneNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:_targetDoneNotification object:nil];
     
 //    [targetDoneNotification release];
-    targetDoneNotification=nil;
+    self.targetDoneNotification = nil;
     }
-  
 }
 
 - (void)layoutSubviews {
@@ -80,11 +78,12 @@
   
   //imageView
   self.imageView = [[UIImageView alloc]init];
-  _imageView.frame = CGRectMake(boardSpace, 0, cellFrame.size.height-2*boardSpace, cellFrame.size.height-2*boardSpace);
+  _imageView.frame = CGRectMake(boardSpace, boardSpace, cellFrame.size.height-2*boardSpace, cellFrame.size.height-2*boardSpace);
+  [_imageView setContentMode:UIViewContentModeScaleAspectFit];
   [self addSubview:_imageView];
   
   //activityIndicatorView
-  self.activityIndicatorView = [[UIActivityIndicatorView alloc]init];
+  self.activityIndicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
   _activityIndicatorView.frame = CGRectMake(_imageView.center.x-15, _imageView.center.y-15, 30, 30);
   [_imageView addSubview:_activityIndicatorView];
   

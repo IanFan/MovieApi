@@ -63,6 +63,7 @@
   
   NSDictionary *rootDictionary = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingMutableLeaves error:&error];
   NSArray *array = [rootDictionary objectForKey:@"movies"];
+  NSLog(@"array = %@",array);
   [self sortWithRootArray:array];
 }
 

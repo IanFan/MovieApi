@@ -160,13 +160,15 @@
   //check image
   NSString *imageUrlStr = item.list_posterUrlStr;
   if ([[DataSingleton sharedInstance] isCachedUrlStrExist:imageUrlStr] == YES) {
-    NSData *data = [[DataSingleton sharedInstance] loadCachedFileWithUrlStr:imageUrlStr];
+    NSData *data = [[DataSingleton sharedInstance] returnCachedFileWithUrlStr:imageUrlStr];
     UIImage *image = [UIImage imageWithData:data];
     
     [cell.imageView setImage:image];
     [cell.activityIndicatorView stopAnimating];
   }else {
-    [[DataSingleton sharedInstance] downloadFileWithUrlStr:imageUrlStr saveAsCache:YES doneNotification:imageUrlStr];
+    [[DataSingleton sharedInstance] downloadFileWithUrlStr:imageUrlStr saveAsCache:YES doneNotificationStr:imageUrlStr];
+    [cell waitDoneNotification:imageUrlStr];
+    [cell.activityIndicatorView startAnimating];
   }
   
   return cell;
@@ -226,7 +228,7 @@
 
 -(void)setupTableView {
 //  float headbarHeight = (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)? HISTORYVIEW_HEADBAR_HEIGHT_PAD:HISTORYVIEW_HEADBAR_HEIGHT_PHONE;
-  float headbarHeight = 100;
+  float headbarHeight = 20;
   self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, headbarHeight, self.frame.size.width, self.frame.size.height-headbarHeight)];
   _tableView.dataSource = self;
   _tableView.delegate = self;

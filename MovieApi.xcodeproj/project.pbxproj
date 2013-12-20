@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182B6DAD18644C4400107437 /* List_iPhone_TableiVewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B6DAC18644C4400107437 /* List_iPhone_TableiVewCell.m */; };
+		182B6DB31864695400107437 /* DownloadObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B6DB21864695400107437 /* DownloadObject.m */; };
 		18A78C471862C8B4008C2A6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C461862C8B4008C2A6F /* Foundation.framework */; };
 		18A78C491862C8B4008C2A6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C481862C8B4008C2A6F /* CoreGraphics.framework */; };
 		18A78C4B1862C8B4008C2A6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C4A1862C8B4008C2A6F /* UIKit.framework */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		182B6DAB18644C4400107437 /* List_iPhone_TableiVewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List_iPhone_TableiVewCell.h; sourceTree = "<group>"; };
 		182B6DAC18644C4400107437 /* List_iPhone_TableiVewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List_iPhone_TableiVewCell.m; sourceTree = "<group>"; };
+		182B6DB11864695400107437 /* DownloadObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadObject.h; sourceTree = "<group>"; };
+		182B6DB21864695400107437 /* DownloadObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadObject.m; sourceTree = "<group>"; };
 		18A78C431862C8B4008C2A6F /* MovieApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A78C461862C8B4008C2A6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18A78C481862C8B4008C2A6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -176,6 +179,8 @@
 				18A78C561862C8B4008C2A6F /* AppDelegate.m */,
 				18A78CAB1862D067008C2A6F /* DataSingleton.h */,
 				18A78CAC1862D067008C2A6F /* DataSingleton.m */,
+				182B6DB11864695400107437 /* DownloadObject.h */,
+				182B6DB21864695400107437 /* DownloadObject.m */,
 				18A78C5E1862C8B4008C2A6F /* ViewController.h */,
 				18A78C5F1862C8B4008C2A6F /* ViewController.m */,
 				18E0BBD71862F19D00C00136 /* ListView.h */,
@@ -389,6 +394,7 @@
 				18A78C571862C8B4008C2A6F /* AppDelegate.m in Sources */,
 				18A78C531862C8B4008C2A6F /* main.m in Sources */,
 				18A78C831862CD73008C2A6F /* Reachability.m in Sources */,
+				182B6DB31864695400107437 /* DownloadObject.m in Sources */,
 				18A78CA31862CFCF008C2A6F /* AFHTTPRequestOperationManager.m in Sources */,
 				18A78CA61862CFCF008C2A6F /* AFSecurityPolicy.m in Sources */,
 				18A78CA91862CFCF008C2A6F /* AFURLResponseSerialization.m in Sources */,
