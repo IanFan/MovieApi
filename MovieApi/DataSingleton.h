@@ -12,4 +12,10 @@
 
 +(id)sharedInstance;
 
+@property (nonatomic,retain) NSMutableArray *listItemArray;
+
+//Cache
+-(BOOL)isCachedUrlStrExist:(NSString*)urlStr;
+-(NSData*)loadCachedFileWithUrlStr:(NSString*)urlStr;
+-(void)downloadFileWithUrlStr:(NSString*)urlStr saveAsCache:(BOOL)isSaveAsCache doneNotification:(NSString*)targetNotificationStr;
 @end

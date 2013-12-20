@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ListViewDelegate>
 {
+  ListView *_listView;
 }
 
 @property (nonatomic,retain) NSMutableData *responseData;

@@ -17,6 +17,24 @@
   return shared;
 }
 
+#pragma mark - Cache
+
+-(BOOL)isCachedUrlStrExist:(NSString *)urlStr {
+  BOOL isCached = NO;
+  
+  return isCached;
+}
+
+-(NSData*)loadCachedFileWithUrlStr:(NSString *)urlStr {
+  NSData *data = nil;
+  
+  return data;
+}
+
+-(void)downloadFileWithUrlStr:(NSString *)urlStr saveAsCache:(BOOL)isSaveAsCache doneNotification:(NSString *)targetNotificationStr {
+  
+}
+
 #pragma mark - Init
 
 -(id)init {

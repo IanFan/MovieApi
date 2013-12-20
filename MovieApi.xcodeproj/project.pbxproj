@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182B6DAD18644C4400107437 /* List_iPhone_TableiVewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B6DAC18644C4400107437 /* List_iPhone_TableiVewCell.m */; };
 		18A78C471862C8B4008C2A6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C461862C8B4008C2A6F /* Foundation.framework */; };
 		18A78C491862C8B4008C2A6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C481862C8B4008C2A6F /* CoreGraphics.framework */; };
 		18A78C4B1862C8B4008C2A6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A78C4A1862C8B4008C2A6F /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 		18A78CA91862CFCF008C2A6F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A78C9F1862CFCF008C2A6F /* AFURLResponseSerialization.m */; };
 		18A78CAA1862CFCF008C2A6F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A78CA11862CFCF008C2A6F /* AFURLSessionManager.m */; };
 		18A78CAD1862D067008C2A6F /* DataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A78CAC1862D067008C2A6F /* DataSingleton.m */; };
+		18E0BBD91862F19D00C00136 /* ListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E0BBD81862F19D00C00136 /* ListView.m */; };
+		18E0BBDC1862F87F00C00136 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E0BBDB1862F87F00C00136 /* ListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182B6DAB18644C4400107437 /* List_iPhone_TableiVewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List_iPhone_TableiVewCell.h; sourceTree = "<group>"; };
+		182B6DAC18644C4400107437 /* List_iPhone_TableiVewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List_iPhone_TableiVewCell.m; sourceTree = "<group>"; };
 		18A78C431862C8B4008C2A6F /* MovieApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A78C461862C8B4008C2A6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18A78C481862C8B4008C2A6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +104,10 @@
 		18A78CA11862CFCF008C2A6F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		18A78CAB1862D067008C2A6F /* DataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSingleton.h; sourceTree = "<group>"; };
 		18A78CAC1862D067008C2A6F /* DataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSingleton.m; sourceTree = "<group>"; };
+		18E0BBD71862F19D00C00136 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
+		18E0BBD81862F19D00C00136 /* ListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListView.m; sourceTree = "<group>"; };
+		18E0BBDA1862F87F00C00136 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		18E0BBDB1862F87F00C00136 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,13 +171,19 @@
 		18A78C4C1862C8B4008C2A6F /* MovieApi */ = {
 			isa = PBXGroup;
 			children = (
-				18A78C841862CD7B008C2A6F /* GeneralTool */,
+				18A78C841862CD7B008C2A6F /* Tool */,
 				18A78C551862C8B4008C2A6F /* AppDelegate.h */,
 				18A78C561862C8B4008C2A6F /* AppDelegate.m */,
-				18A78C5E1862C8B4008C2A6F /* ViewController.h */,
-				18A78C5F1862C8B4008C2A6F /* ViewController.m */,
 				18A78CAB1862D067008C2A6F /* DataSingleton.h */,
 				18A78CAC1862D067008C2A6F /* DataSingleton.m */,
+				18A78C5E1862C8B4008C2A6F /* ViewController.h */,
+				18A78C5F1862C8B4008C2A6F /* ViewController.m */,
+				18E0BBD71862F19D00C00136 /* ListView.h */,
+				18E0BBD81862F19D00C00136 /* ListView.m */,
+				18E0BBDA1862F87F00C00136 /* ListItem.h */,
+				18E0BBDB1862F87F00C00136 /* ListItem.m */,
+				182B6DAB18644C4400107437 /* List_iPhone_TableiVewCell.h */,
+				182B6DAC18644C4400107437 /* List_iPhone_TableiVewCell.m */,
 				18A78C581862C8B4008C2A6F /* Main_iPhone.storyboard */,
 				18A78C5B1862C8B4008C2A6F /* Main_iPad.storyboard */,
 				18A78C611862C8B4008C2A6F /* Images.xcassets */,
@@ -206,14 +221,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18A78C841862CD7B008C2A6F /* GeneralTool */ = {
+		18A78C841862CD7B008C2A6F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
 				18A78C891862CDB0008C2A6F /* Localize */,
 				18A78C881862CDA7008C2A6F /* Rechability */,
 				18A78C8E1862CFCE008C2A6F /* AFNetworking */,
 			);
-			name = GeneralTool;
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		18A78C881862CDA7008C2A6F /* Rechability */ = {
@@ -362,6 +377,8 @@
 			files = (
 				18A78CAA1862CFCF008C2A6F /* AFURLSessionManager.m in Sources */,
 				18A78C871862CDA0008C2A6F /* LocalObject.m in Sources */,
+				18E0BBDC1862F87F00C00136 /* ListItem.m in Sources */,
+				18E0BBD91862F19D00C00136 /* ListView.m in Sources */,
 				18A78C821862CD73008C2A6F /* ReachabilityManager.m in Sources */,
 				18A78CA51862CFCF008C2A6F /* AFNetworkReachabilityManager.m in Sources */,
 				18A78C601862C8B4008C2A6F /* ViewController.m in Sources */,
@@ -376,6 +393,7 @@
 				18A78CA61862CFCF008C2A6F /* AFSecurityPolicy.m in Sources */,
 				18A78CA91862CFCF008C2A6F /* AFURLResponseSerialization.m in Sources */,
 				18A78CA21862CFCF008C2A6F /* AFHTTPRequestOperation.m in Sources */,
+				182B6DAD18644C4400107437 /* List_iPhone_TableiVewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
