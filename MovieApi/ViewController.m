@@ -27,6 +27,9 @@
   [self setupListView];
   
   [self connectToMovieApiAndSearchHobbit];
+  
+  //remove old cache
+  [self performSelectorInBackground:@selector(checkAndRemoveOldFiles) withObject:nil];
 }
 
 #pragma mark - Connection
@@ -107,17 +110,42 @@
   [self.view addSubview:_listView];
 }
 
-#pragma mark - Delegate
+#pragma mark - ListViewDelegate
 
-//-(void)ListViewDelegateShowMailViewMethod {
-//  
-//}
+-(void)ListViewDelegateShowMailViewMethod {
+  
+}
+
+#pragma mark - RemoveOldFiles
+
+-(void)checkAndRemoveOldFiles {
+  NSArray *arrayAllFiles=[[NSFileManager defaultManager] contentsOfDirectoryAtPath:CACHE_FOLDER error:nil];
+  
+  for(NSString *targetFileName in arrayAllFiles)
+    {
+    NSString *stringFilePathName=[CACHE_FOLDER stringByAppendingPathComponent:targetFileName];
+    
+    NSDictionary *dictionaryfFile=[[NSFileManager defaultManager] attributesOfItemAtPath:stringFilePathName error:nil];
+    
+    NSDate *lastModificationDate=[dictionaryfFile objectForKey:NSFileModificationDate];
+    
+    NSDate *nowDate=[NSDate date];
+    
+    if([nowDate timeIntervalSinceDate:lastModificationDate]>86400*CACHE_FILE_EXPIRE_DAYS) {
+      [[NSFileManager defaultManager] removeItemAtPath:stringFilePathName error:nil];
+    }
+    }
+}
 
 #pragma mark - Memory
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+//  if (_responseData != nil) self.responseData = nil;
 }
 
 @end

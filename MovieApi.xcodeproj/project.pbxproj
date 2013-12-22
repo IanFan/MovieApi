@@ -174,13 +174,10 @@
 		18A78C4C1862C8B4008C2A6F /* MovieApi */ = {
 			isa = PBXGroup;
 			children = (
-				18A78C841862CD7B008C2A6F /* Tool */,
+				18A78C841862CD7B008C2A6F /* Tool (Network,Languages) */,
+				18EB07A11866BB8900780DE5 /* Data (Define,Cache) */,
 				18A78C551862C8B4008C2A6F /* AppDelegate.h */,
 				18A78C561862C8B4008C2A6F /* AppDelegate.m */,
-				18A78CAB1862D067008C2A6F /* DataSingleton.h */,
-				18A78CAC1862D067008C2A6F /* DataSingleton.m */,
-				182B6DB11864695400107437 /* DownloadObject.h */,
-				182B6DB21864695400107437 /* DownloadObject.m */,
 				18A78C5E1862C8B4008C2A6F /* ViewController.h */,
 				18A78C5F1862C8B4008C2A6F /* ViewController.m */,
 				18E0BBD71862F19D00C00136 /* ListView.h */,
@@ -226,14 +223,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18A78C841862CD7B008C2A6F /* Tool */ = {
+		18A78C841862CD7B008C2A6F /* Tool (Network,Languages) */ = {
 			isa = PBXGroup;
 			children = (
 				18A78C891862CDB0008C2A6F /* Localize */,
 				18A78C881862CDA7008C2A6F /* Rechability */,
 				18A78C8E1862CFCE008C2A6F /* AFNetworking */,
 			);
-			name = Tool;
+			name = "Tool (Network,Languages)";
 			sourceTree = "<group>";
 		};
 		18A78C881862CDA7008C2A6F /* Rechability */ = {
@@ -280,6 +277,17 @@
 				18A78CA11862CFCF008C2A6F /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		18EB07A11866BB8900780DE5 /* Data (Define,Cache) */ = {
+			isa = PBXGroup;
+			children = (
+				18A78CAB1862D067008C2A6F /* DataSingleton.h */,
+				18A78CAC1862D067008C2A6F /* DataSingleton.m */,
+				182B6DB11864695400107437 /* DownloadObject.h */,
+				182B6DB21864695400107437 /* DownloadObject.m */,
+			);
+			name = "Data (Define,Cache)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +548,7 @@
 				GCC_PREFIX_HEADER = "MovieApi/MovieApi-Prefix.pch";
 				INFOPLIST_FILE = "MovieApi/MovieApi-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -553,6 +562,7 @@
 				GCC_PREFIX_HEADER = "MovieApi/MovieApi-Prefix.pch";
 				INFOPLIST_FILE = "MovieApi/MovieApi-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

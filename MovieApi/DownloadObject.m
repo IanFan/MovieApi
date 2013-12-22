@@ -28,21 +28,16 @@
 
 -(void)dealloc {
   self.downloadUrlStr = nil;
-  //[parentDelegate release];
   _downloadObjectDelegate = nil;
   self.extraParameter = nil;
-  //  [super dealloc];
 }
 
 #pragma mark
 
 -(void)startDownload {
-//  _downloadUrlStr = @"http://cf2.imgobject.com/t/p/original/8KYEsBl0bT4V3HzOawohxlhIJB6.jpg";
   NSURL *url = [NSURL URLWithString:_downloadUrlStr];
   NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60.0];
   NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
-  
-  NSLog(@"urlStr = %@",_downloadUrlStr);
   
   if (connection) {
     self.respondData = [NSMutableData data];
@@ -65,7 +60,7 @@
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData*)data {
   [_respondData appendData:data]; //  Data will be appended to here!
-                                 //NSLog(@"respond Data = %@",respondData);
+  
   if(_shouldCancel == YES) {
     [connection cancel];
     // Report to delegate
@@ -88,7 +83,6 @@
     [_downloadObjectDelegate downloadObjectDelegateDownloadSuccessWithData:_respondData byDownloader:self];
   
   // Release respondData
-  //    [respondData release];
   self.respondData = nil;
 }
 

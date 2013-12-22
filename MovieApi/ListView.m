@@ -36,19 +36,13 @@
 //  UITouch *touch = [touches anyObject];
 //  CGPoint currentTouchPosition = [touch locationInView:_tableView];
 //  NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint: currentTouchPosition];
-//  CoefficientObject *coObject = [[[DefineMacro sharedInstance] coefficientArray] objectAtIndex:[indexPath row]];
-//  if ([self.listViewDelegate respondsToSelector:@selector(listViewDelegateShowMailViewControllerWithCoefficientObject:)] == YES) {
-//    [self.listViewDelegate listViewDelegateShowMailViewControllerWithCoefficientObject:coObject];
-//  }
   
-  //  if (indexPath != nil) [self tableView:_tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
+//  if (indexPath != nil) [self tableView:_tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 
 #pragma mark - Table view delegate
 
 - (void) tableView: (UITableView *) tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-  NSLog(@"row = %d",[indexPath row]);
-  
   //  [self tableView:_tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
   
 }
@@ -66,41 +60,28 @@
 // Override to support conditional editing of the table view.
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
   // Return NO if you do not want the specified item to be editable.
-  return YES;
+  return NO;
 }
 
 // Override to support conditional rearranging of the table view.
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
   // Return NO if you do not want the item to be re-orderable.
-  return YES;
+  return NO;
 }
 
 // Override to support editing the table view.
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
   if (editingStyle == UITableViewCellEditingStyleDelete) {
     // Delete the row from the data source
-//    [[[DefineMacro sharedInstance] coefficientArray] removeObjectAtIndex:[indexPath row]];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
   }
   else if (editingStyle == UITableViewCellEditingStyleInsert) {
     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
   }
-  
-//  [[DefineMacro sharedInstance] saveCoefficientArray];
 }
 
 // Override to support rearranging the table view.
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-//  CoefficientObject *coObject = [[[[DefineMacro sharedInstance] coefficientArray] objectAtIndex:fromIndexPath.row] retain];
-//  [[[DefineMacro sharedInstance] coefficientArray] removeObjectAtIndex:[fromIndexPath row]];
-//  [[[DefineMacro sharedInstance] coefficientArray] insertObject:coObject atIndex:[toIndexPath row]];
-//  [coObject release];
-  
-//  [[DefineMacro sharedInstance] saveCoefficientArray];
-  
-  //  for (CoefficientObject *coObject in [[DefineMacro sharedInstance] coefficientArray]) {
-  //    NSLog(@"coObject.priceValue = %f",coObject.priceValue);
-  //  }
 }
 
 #pragma mark - Table view data source
@@ -133,6 +114,11 @@
   [cell.textLabel setText:item.list_titleStr];
   cell.textLabel.textColor = [UIColor blackColor];
   [cell.textLabel setNumberOfLines:5];
+   
+  //longtapGesture
+  UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(cellLongPress:)];
+  longPressGesture.minimumPressDuration = 1.0;
+  [cell addGestureRecognizer:longPressGesture];
   */
 
   //cusomized cell
@@ -143,13 +129,6 @@
     cell = [[List_iPhone_TableiVewCell alloc] init];
   }
   [cell prepareCell];
-  
-  /*
-   //longtapGesture
-   UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(cellLongPress:)];
-   longPressGesture.minimumPressDuration = 1.0;
-   [cell addGestureRecognizer:longPressGesture];
-   */
   
   // Configure the cell...
   //text:title,year,rating
@@ -227,7 +206,6 @@
 }
 
 -(void)setupTableView {
-//  float headbarHeight = (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)? HISTORYVIEW_HEADBAR_HEIGHT_PAD:HISTORYVIEW_HEADBAR_HEIGHT_PHONE;
   float headbarHeight = 20;
   self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, headbarHeight, self.frame.size.width, self.frame.size.height-headbarHeight)];
   _tableView.dataSource = self;
@@ -250,11 +228,10 @@
 }
 
 -(void)dealloc {
+  self.listViewDelegate = nil;
+//  if (_headerBarView != nil) self.headerBarView = nil;
 //  if (_editButton != nil) self.editButton = nil;
-//  if (_headerBarView != nil) [_headerBarView release], self.headerBarView = nil;
-//  if (_tableView != nil) _tableView.dataSource = nil, _tableView.delegate = nil, [_tableView release], self.tableView = nil;
-  
-//  [super dealloc];
+//  if (_tableView != nil) self.tableView = nil;
 }
 
 @end

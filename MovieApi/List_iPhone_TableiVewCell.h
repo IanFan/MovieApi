@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic,retain) UIImageView *imageView;
+@property (nonatomic,retain) UILabel *imageLabel;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic,retain) UILabel *titleLabel;
 @property (nonatomic,retain) UILabel *subTitleLabel;

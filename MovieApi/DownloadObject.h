@@ -21,7 +21,6 @@
 @property (nonatomic,assign) id <DownloadObjectDelegate> downloadObjectDelegate;
 @property NSInteger tag;
 @property (nonatomic,retain) NSString *downloadUrlStr;
-//@property (nonatomic,retain) NSURL *downloadURL;
 @property (nonatomic,retain) id extraParameter;
 @property (nonatomic,retain) NSMutableData *respondData;
 

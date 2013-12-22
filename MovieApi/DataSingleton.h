@@ -22,10 +22,12 @@
 
 #define RESULT_TAG  @"Result"
 #define DATA_TAG    @"Data"
-#define URLSTR_TAG     @"Url"
+#define URLSTR_TAG  @"Url"
 #define ERROR_TAG   @"Error"
 
 #define DOWNLOADER_TAG_CHAPTERCONTENTFILE_AND_FULL           68999
+
+#define CACHE_FILE_EXPIRE_DAYS 30
 
 @interface DataSingleton : NSObject <DownloadObjectDelegate>
 
